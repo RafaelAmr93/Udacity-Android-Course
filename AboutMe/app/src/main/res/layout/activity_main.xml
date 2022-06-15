@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="authorName"
+            type="com.example.aboutme.AuthorName" />
+    </data>
+
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".MainActivity"
+    android:id="@+id/linear_layout_aboutme">
+
+    <TextView
+        android:id="@+id/author_name_text"
+        style="@style/NameSpace"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@{authorName.name}" />
+
+    <EditText
+        android:id="@+id/book_input"
+        style="@style/NameSpace"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="@string/book_input_hint"
+        android:inputType="textPersonName"
+        android:minHeight="48dp"
+        android:textColorHint="#757575"
+        android:textStyle="italic" />
+
+    <Button
+        android:id="@+id/send_button"
+        style="@style/NameSpace"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:text="@string/button"
+        android:textColor="@color/white" />
+
+    <TextView
+        android:id="@+id/typed_book"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        style="@style/NameSpace"
+        android:text="@{authorName.nickname}"
+        />
+
+    <ImageView
+        android:id="@+id/star_icon"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:srcCompat="@android:drawable/btn_star_big_on"
+        style="@style/NameSpace"/>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:id="@+id/textView5"
+            style="@style/NameSpace"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:lineSpacingMultiplier="1.3"
+            android:text="@string/bio"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="14dp"
+            android:justificationMode="inter_word"
+            />
+    </ScrollView>
+</LinearLayout>
+
+</layout>

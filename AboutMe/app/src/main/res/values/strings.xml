@@ -1,0 +1,20 @@
+<resources>
+    <string name="app_name">About Me</string>
+    <string name="name">Thomas Mann</string>
+    <string name="book_input_hint">Type your favorite book!</string>
+    <string name="button">SEND</string>
+    <string name="bio">
+        Thomas Mann, (born June 6, 1875, Lübeck, Germany—died August 12, 1955, near Zürich, Switzerland), German novelist and essayist whose early novels—Buddenbrooks (1900), Der Tod in Venedig (1912; Death in Venice), and Der Zauberberg (1924; The Magic Mountain)—earned him the Nobel Prize for Literature in 1929.
+\n\n
+        The novel The Magic Mountain theme grows out of an earlier motif: a young engineer, Hans Castorp, visiting a cousin in a sanatorium in Davos, abandons practical life to submit to the rich seductions of disease, inwardness, and death.
+        \nBut the sanatorium comes to be the spiritual reflection of the possibilities and dangers of the actual world.
+        \nIn the end, somewhat skeptically but humanely, Castorp decides for life and service to his people: a decision Mann calls “a leave-taking from many a perilous sympathy, enchantment, and temptation, to which the European soul had been inclined.”
+        \n\nIn this great work Mann formulates with remarkable insight the fateful choices facing Europe.
+        \n\nLegacy
+Mann was the greatest German novelist of the 20th century, and by the end of his life his works had acquired the status of classics both within and without Germany.
+        \nHis subtly structured novels and shorter stories constitute a persistent and imaginative enquiry into the nature of Western bourgeois culture, in which a haunting awareness of its precariousness and threatened disintegration is balanced by an appreciation of and tender concern for its spiritual achievements.
+
+
+
+    </string>
+</resources>
