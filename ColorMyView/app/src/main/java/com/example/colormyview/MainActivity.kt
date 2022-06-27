@@ -20,14 +20,29 @@ class MainActivity : AppCompatActivity() {
 
     private fun setListeners(){
 
-        val clickableViews: List<View> =
+        val clickableBoxes: List<View> =
             listOf(binding.boxOneText, binding.boxTwoText, binding.boxThreeText,
                 binding.boxFourText, binding.boxFiveText, binding.constraintLayout,
-            binding.buttonRed, binding.buttonYellow, binding.buttonBlue)
+            )
 
-        for (i in clickableViews){
+        val clickableButtons: List<View> =
+            listOf(binding.buttonRed, binding.buttonYellow, binding.buttonBlue)
+
+        for (i in clickableBoxes){
             i.setOnClickListener { makeColored(it) }
+            i.setOnClickListener {makeColored(it)}
         }
+
+        for (i in clickableButtons){
+            i.setOnClickListener {makeColored(it)}
+        }
+
+        binding.resetButton.setOnClickListener {
+            for (i in clickableBoxes){
+                i.setBackgroundColor(Color.WHITE)
+            }
+        }
+
     }
 
     private fun makeColored(view: View){
@@ -42,8 +57,8 @@ class MainActivity : AppCompatActivity() {
             //click nos botoes
             R.id.button_red -> binding.boxFourText.setBackgroundResource(android.R.color.holo_red_dark)
             R.id.button_yellow -> binding.boxTwoText.setBackgroundResource(android.R.color.holo_orange_light)
-            R.id.button_blue -> binding.boxThreeText.setBackgroundColor(Color.WHITE)
-            else -> view.setBackgroundColor(Color.BLACK)
+            R.id.button_blue -> binding.boxThreeText.setBackgroundColor(Color.YELLOW)
+            else -> view.setBackgroundColor(Color.LTGRAY)
         }
     }
 }

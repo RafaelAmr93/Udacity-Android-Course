@@ -10,4 +10,5 @@
     <string name="button_red">RED</string>
     <string name="button_yellow">YELLOW</string>
     <string name="button_blue">BLUE</string>
+    <string name="reset_button">reset</string>
 </resources>

@@ -1,4 +1,5 @@
 <resources>
     <string name="app_name">Dice Roller</string>
     <string name="main_button">Roll!</string>
+    <string name="previous">Previous result:</string>
 </resources>

@@ -23,6 +23,7 @@ import android.widget.Toast
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import androidx.navigation.Navigation
+import androidx.navigation.findNavController
 import com.example.android.navigation.databinding.FragmentGameWonBinding
 
 
@@ -33,9 +34,9 @@ class GameWonFragment : Fragment() {
         val binding: FragmentGameWonBinding = DataBindingUtil.inflate(
                 inflater, R.layout.fragment_game_won, container, false)
 
-        binding.nextMatchButton.setOnClickListener(
-            Navigation.createNavigateOnClickListener(R.id.action_gameWonFragment_to_gameFragment2)
-        )
+        binding.nextMatchButton.setOnClickListener {
+            it.findNavController().navigate(GameWonFragmentDirections.actionGameWonFragmentToGameFragment2())
+        }
 
         val args = GameWonFragmentArgs.fromBundle(arguments!!)
         Toast.makeText(context, "Correct: ${args.numCorrect} | Total: ${args.numQuestions}", Toast.LENGTH_LONG).show()
