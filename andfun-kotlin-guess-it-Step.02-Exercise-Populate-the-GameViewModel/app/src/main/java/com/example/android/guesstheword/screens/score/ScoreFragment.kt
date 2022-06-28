@@ -27,9 +27,8 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
 import com.example.android.guesstheword.R
-import com.example.android.guesstheword.databinding.GameFragmentBinding
 import com.example.android.guesstheword.databinding.ScoreFragmentBinding
-import com.example.android.guesstheword.screens.game.GameViewModel
+
 
 /**
  * Fragment where the final score is shown, after the game is over
@@ -59,9 +58,13 @@ class ScoreFragment : Fragment() {
         viewModelFactory = ScoreViewModelFactory(scoreFragmentArgs.score)
         viewModel = ViewModelProvider(this,viewModelFactory).get(ScoreViewModel::class.java)
 
-        viewModel.score.observe(viewLifecycleOwner, Observer { finalScore ->
-            binding.scoreText.text = finalScore.toString()
-        })
+        //aqui o xml se conecta ao viewModel
+        binding.scoreViewModel = viewModel
+
+     //foi feito o data binding para que o text do xml score_fragment chame a função toString diretamente de ScoreViewModel
+        // no xml, use String.valueOf()
+
+        binding.lifecycleOwner = this
 
         viewModel.eventPlayAgain.observe(viewLifecycleOwner, Observer { playAgain ->
             if (playAgain) {
@@ -69,7 +72,7 @@ class ScoreFragment : Fragment() {
                 viewModel.onPlayAgainComplete()
             }
         })
-        binding.lifecycleOwner = this
+
 
         return binding.root
     }

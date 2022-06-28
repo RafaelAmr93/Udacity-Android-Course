@@ -22,6 +22,7 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import android.text.format.DateUtils
+import androidx.lifecycle.Transformations
 import java.util.*
 
 
@@ -42,6 +43,9 @@ class GameViewModel : ViewModel() {
     val currentTimer: LiveData<Long>
         get() = _currentTimer
 
+    val currentTimeString = Transformations.map(currentTimer) { timer ->
+        DateUtils.formatElapsedTime(timer)
+    }
 
     // The current word
     private val _word = MutableLiveData<String>()
