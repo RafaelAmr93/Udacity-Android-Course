@@ -53,7 +53,7 @@ class SleepTrackerFragment : Fragment() {
                 inflater, R.layout.fragment_sleep_tracker, container, false)
 
         //set the current activity as the lifecycle owner of the binding
-        binding.setLifecycleOwner(this)
+        binding.lifecycleOwner = this
 
         //variavel que faz referencia a propria aplicaçao
         val application = requireNotNull(this.activity).application

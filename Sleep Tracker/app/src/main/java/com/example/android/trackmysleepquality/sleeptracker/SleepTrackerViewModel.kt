@@ -40,7 +40,7 @@ class SleepTrackerViewModel(
         }
 
         //definindo o scopo de UI
-        private val uiScope = CoroutineScope(Dispatchers.Main + viewModelJob)
+        //private val uiScope = CoroutineScope(Dispatchers.Main + viewModelJob)
 
         //linha mais atual da tabela daily_sleep_quality_table
         private var tonight = MutableLiveData<SleepNight?>()
@@ -79,7 +79,7 @@ class SleepTrackerViewModel(
 
         //lauch inicia a coroutine no escopo que a chama
         fun onStartTracking(){
-                uiScope.launch {
+                viewModelScope.launch {
                         val newNight = SleepNight()
                         insert(newNight)
                         Log.i("onStartTracking ID", "${newNight.nightID}")
@@ -103,7 +103,7 @@ class SleepTrackerViewModel(
         }
 
         fun onStopTracking(){
-                uiScope.launch {
+                viewModelScope.launch {
                         val oldNight = tonight.value ?: return@launch
                         oldNight.endTimeMilli = System.currentTimeMillis()
                         update(oldNight)
@@ -119,7 +119,7 @@ class SleepTrackerViewModel(
         }
 
         fun onClear(){
-                uiScope.launch {
+                viewModelScope.launch {
                         clear()
                         tonight.value = null
                 }
