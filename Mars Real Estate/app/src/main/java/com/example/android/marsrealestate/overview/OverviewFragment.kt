@@ -53,6 +53,7 @@ class OverviewFragment : Fragment() {
         // Giving the binding access to the OverviewViewModel
         binding.viewModel = viewModel
 
+        //bind da view com o adapter, disponivel por ser um recycler view
         binding.photosGrid.adapter = PhotoGridAdapter(PhotoGridAdapter.OnClickListener {
             viewModel.displayPropertyDetails(it)
         })
@@ -63,8 +64,6 @@ class OverviewFragment : Fragment() {
                 viewModel.displayPropertyDetailsComplete()
             }
         })
-
-
 
         setHasOptionsMenu(true)
         return binding.root

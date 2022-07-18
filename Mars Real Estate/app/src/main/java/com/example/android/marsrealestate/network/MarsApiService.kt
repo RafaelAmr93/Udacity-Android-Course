@@ -28,6 +28,7 @@ import retrofit2.http.GET
 import retrofit2.http.Query
 
 private const val BASE_URL = "https://mars.udacity.com/"
+
 enum class MarsApiFilter(val value: String) {
     SHOW_RENT("rent"), SHOW_BUY("buy"), SHOW_ALL("all") }
 
@@ -38,12 +39,10 @@ private val moshi = Moshi.Builder()
 
 //cria o objeto retrofit para fazer requisições http
 private val retrofit = Retrofit.Builder()
-        //adiciona ao retrofit a conversao de json p/ string
-        .addConverterFactory(MoshiConverterFactory.create(moshi))
-       .addCallAdapterFactory(CoroutineCallAdapterFactory())
-        .baseUrl(BASE_URL)
-        .build()
-
+    .addConverterFactory(MoshiConverterFactory.create(moshi))
+    .addCallAdapterFactory(CoroutineCallAdapterFactory())
+    .baseUrl(BASE_URL)
+    .build()
 
 interface MarsApiService{
     @GET("realestate")

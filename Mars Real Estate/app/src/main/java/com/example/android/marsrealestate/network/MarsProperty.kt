@@ -21,6 +21,9 @@ import android.os.Parcelable
 import com.squareup.moshi.Json
 import kotlinx.android.parcel.Parcelize
 
+//parcelable utiliza Bundle para passar infos entre fragments
+//bundle pode transmitir: string, primitivos, serializable e parcelable
+//a vantagem de parcelable é transmitir objetos no formato key/value
 @Parcelize
 class MarsProperty(
         val id: String,
